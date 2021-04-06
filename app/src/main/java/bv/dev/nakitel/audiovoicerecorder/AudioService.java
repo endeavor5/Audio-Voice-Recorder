@@ -55,6 +55,7 @@ import java.util.concurrent.TimeUnit;
     should also declare in manifest service with <intent-filter>
     with <action android:name="android.media.browse.MediaBrowserService"/>
  */
+
 public class AudioService extends MediaBrowserServiceCompat {
     public static final String SOURCE_NONE = "SOURCE_NONE";
     public static final String SOURCE_MIC = "SOURCE_MIC";
@@ -781,6 +782,7 @@ public class AudioService extends MediaBrowserServiceCompat {
         startForeground(SERVICE_ID, notifBuilder.build());
     }
 
+    @SuppressLint("RestrictedApi")
     private void pauseSession() {
         Log.d(LOG_TAG, "pauseSession()");
         try {
